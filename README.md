@@ -10,7 +10,7 @@
 
 
 
-> *Nos sussurros instáveis entre realidade e pesadelo, surge Arlequim Ignivarro, mestre dos paradoxos e guardião do Orbe Flamejante. No coração de uma floresta enfeitiçada, Ignivarro desafia magos e viajantes dimensionais: dentro do orbe ardente que segura, esconde-se o poder dos números, alinhados em matrizes que refletem as linhas do destino!*
+> *Nos sussurros instáveis entre realidade e pesadelo, surge Arlequim Ignivarro, mestre dos paradoxos e guardião do Orbe Flamejante. No coração de uma floresta enfeitiçada, Ignivarris desafia magos e viajantes dimensionais: dentro do orbe ardente que segura, esconde-se o poder dos números, alinhados em matrizes que refletem as linhas do destino!*
 
 **Missão:** Criar uma função capaz de localizar uma sequência mágica de números dentro de uma matriz bidimensional. A função deve retornar a posição inicial (linha, coluna) e a direção onde a sequência aparece: **horizontal**, **vertical** ou **diagonal**.
 
