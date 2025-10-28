@@ -350,11 +350,7 @@ Este projeto está sob a licença MIT. Sinta-se livre para usar, modificar e dis
 
 ---
 
-## 🌟 Agradecimentos
 
-Desafio inspirado no universo fantástico do **Arlequim Ardente**, onde lógica e magia se encontram em matrizes de números! 🔥✨
-
----
 
 **⭐ Se este projeto te ajudou, deixe uma estrela no repositório!**
 
