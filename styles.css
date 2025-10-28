@@ -1,0 +1,486 @@
+/* Reset e Configurações Globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  background: #000;
+}
+
+/* Vídeo de Background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Controles de Áudio */
+.audio-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+.audio-btn {
+  background: rgba(10, 5, 24, 0.9);
+  border: 2px solid #14540d;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-btn:hover {
+  background: rgba(0, 255, 85, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 255, 85, 0.5);
+}
+
+.audio-btn:active {
+  transform: scale(0.95);
+}
+
+/* Conteúdo Principal */
+.main-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Container do Desafio */
+.challenge-container {
+  background: rgba(10, 5, 24, 0.95);
+  border: 2px solid #ff2401;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  margin-left: 5%;
+  box-shadow: 0 0 40px rgba(255, 36, 1, 0.4);
+  backdrop-filter: blur(10px);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* Scrollbar Customizada */
+.challenge-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.challenge-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.challenge-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff2401, #b81414);
+  border-radius: 10px;
+}
+
+/* Títulos */
+.challenge-title {
+  font-size: 28px;
+  color: #ff2401;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(255, 36, 1, 0.8);
+  font-weight: bold;
+}
+
+.challenge-subtitle {
+  font-size: 16px;
+  color: #00ff88;
+  text-align: center;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-family: 'Lora', serif;
+}
+
+/* Legenda das Cores */
+.color-legend {
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid #00ff88;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.legend-title {
+  font-size: 14px;
+  color: #00ff88;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #fff;
+}
+
+.legend-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
+}
+
+/* Informações do Mapa */
+.map-info {
+  background: rgba(255, 36, 1, 0.1);
+  border: 1px solid #ff7c00;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.map-title {
+  font-size: 18px;
+  color: #ff7c00;
+  margin-bottom: 5px;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+}
+
+.map-difficulty {
+  font-size: 14px;
+  color: #f7ff00;
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(247, 255, 0, 0.2);
+  border-radius: 15px;
+}
+
+.map-progress {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Display da Matriz */
+.matrix-display {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00ffff;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  animation: matrixAppear 0.5s ease-in-out;
+}
+
+@keyframes matrixAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.matrix-title {
+  color: #00ffff;
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.matrix-container {
+  display: flex;
+  justify-content: center;
+}
+
+.matrix-grid {
+  display: inline-grid;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.matrix-cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  animation: cellPulse 2s infinite;
+  color: #000;
+}
+
+@keyframes cellPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  }
+}
+
+.matrix-cell:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.sequence-display {
+  color: #f7ff00;
+  font-size: 16px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+/* Container dos Botões */
+.buttons-container {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+/* Botões com Efeito Glow */
+.glow-on-hover {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff2401, #b81414, #ff7c00, #f7ff00, #ff7c00, #b81414, #ff7c00, #b81414, #ff2401);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Seção de Resultados */
+.result-section {
+  background: rgba(0, 255, 136, 0.1);
+  border: 2px solid #00ff88;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 25px;
+  animation: resultAppear 0.5s ease-in-out;
+}
+
+@keyframes resultAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-title {
+  font-size: 20px;
+  color: #00ff88;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+}
+
+.result-steps {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 10px 0;
+}
+
+.result-step {
+  margin: 8px 0;
+}
+
+.result-output {
+  background: rgba(255, 36, 1, 0.2);
+  border: 2px solid #ff2401;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.result-output-label {
+  color: #ff7c00;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.result-output-value {
+  color: #f7ff00;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(247, 255, 0, 0.6);
+}
+
+.result-validation {
+  margin-top: 15px;
+  text-align: center;
+  color: #00ff88;
+  font-size: 14px;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  color: #00ffff;
+  font-size: 16px;
+  animation: pulse 1s infinite;
+  padding: 20px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .challenge-container {
+    margin-left: 0;
+    padding: 25px;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+  }
+
+  .matrix-cell {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .challenge-title {
+    font-size: 22px;
+  }
+
+  .audio-controls {
+    top: 10px;
+    right: 10px;
+  }
+
+  .glow-on-hover {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .matrix-cell {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .challenge-container {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O Enigma do Arlequim Ardente</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Vídeo de Background -->
+    <video class="video-background" autoplay loop muted playsinline>
+      <source src="assets/background.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Áudio da Música Tema -->
+    <audio id="theme-audio" loop>
+      <source src="assets/theme.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Controles de Áudio -->
+    <div class="audio-controls">
+      <button id="play-audio" class="audio-btn" title="Tocar música">🎵</button>
+      <button id="pause-audio" class="audio-btn" title="Pausar música">⏸️</button>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+      <div class="challenge-container">
+        <!-- Título Principal -->
+        <h1 class="challenge-title">O Enigma Rubro da Arlequim 🔥</h1>
+        <p class="challenge-subtitle">Desvende os segredos do Orbe Flamejante</p>
+
+        <!-- Legenda das Cores -->
+        <div class="color-legend">
+          <div class="legend-title">📖 Legenda das Cores:</div>
+          <div class="legend-items">
+            <div class="legend-item">
+              <span class="legend-color" style="background: #888"></span>
+              <span>Célula normal</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color" style="background: #00ff88"></span>
+              <span>Sequência encontrada</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informações do Mapa Atual -->
+        <div class="map-info">
+          <div class="map-title" id="map-title">Carregando...</div>
+          <span class="map-difficulty" id="map-difficulty">Nível: Iniciante</span>
+          <div class="map-progress" id="map-progress">Mapa 1 de 5</div>
+        </div>
+
+        <!-- Display da Matriz -->
+        <div class="matrix-display" id="matrix-display" style="display: none">
+          <div class="matrix-title">🔥 Matriz do Orbe Flamejante 🔥</div>
+          <div class="matrix-container">
+            <div class="matrix-grid" id="matrix-grid"></div>
+          </div>
+          <div class="sequence-display" id="sequence-display">Sequência Mágica: [...]</div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="buttons-container">
+          <button class="glow-on-hover" id="calculate-btn">CALCULAR MATRIZ</button>
+          <button class="glow-on-hover" id="next-btn">PRÓXIMA MATRIZ</button>
+        </div>
+
+        <!-- Seção de Resultados -->
+        <div class="result-section" id="result-section" style="display: none">
+          <div class="result-title">📜 Resultado da Análise 📜</div>
+
+          <div class="result-steps" id="result-steps">
+            <!-- Os passos serão inseridos aqui pelo JavaScript -->
+          </div>
+
+          <div class="result-output" id="result-output">
+            <div class="result-output-label">🎯 Saída Esperada:</div>
+            <div class="result-output-value" id="result-value">
+              <!-- O resultado será inserido aqui -->
+            </div>
+          </div>
+
+          <div class="result-validation" id="result-validation">
+            <!-- A validação será inserida aqui -->
+          </div>
+        </div>
+
+        <!-- Loading -->
+        <div class="loading" id="loading" style="display: none">🔮 Analisando o Orbe Flamejante... 🔮</div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
